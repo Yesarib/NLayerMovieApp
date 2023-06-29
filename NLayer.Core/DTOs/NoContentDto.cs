@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.DTOs
 {
-    public class MovieUpdateDto
+    internal class NoContentDto
     {
-        public int Id { get; set; }
-        public string? Title { get; set; }
-        public int CategoryId { get; set; }
-
     }
 }
