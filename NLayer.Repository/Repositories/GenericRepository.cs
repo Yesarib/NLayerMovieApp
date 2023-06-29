@@ -24,7 +24,7 @@ namespace NLayer.Repository.Repositories
             await _dbSet.AddAsync(entity);
         }
 
-        public async Task AddRaneAsync(IEnumerable<T> entities)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbSet.AddRangeAsync(entities);
         }
@@ -34,7 +34,7 @@ namespace NLayer.Repository.Repositories
             return await _dbSet.AnyAsync(expression);
         }
 
-        public  IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public  IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable();
         }
