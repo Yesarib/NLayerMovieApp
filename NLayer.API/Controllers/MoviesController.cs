@@ -11,13 +11,23 @@ namespace NLayer.API.Controllers
     public class MoviesController : CustomBaseController
     {
         private readonly IMapper _mapper;
+        private readonly IMovieService _movieService;
         private readonly IService<Movies> _service;
 
-        public MoviesController(IService<Movies> service, IMapper mapper)
+        public MoviesController(IService<Movies> service, IMapper mapper, IMovieService movieService)
         {
             _service = service;
             _mapper = mapper;
+            _movieService = movieService;
         }
+
+        [HttpGet("GetMoviesWithCategory")]
+        public async Task<IActionResult> GetMoviesWithCategory()
+        {
+            return CreateActionResult(await _movieService.GetMovieWithCategory());
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> All()
@@ -54,13 +64,13 @@ namespace NLayer.API.Controllers
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update(MovieUpdateDto movieDto)
-        {
-            await _service.UpdateAsync(_mapper.Map<Movies>(movieDto));
+        //[HttpPut]
+        //public async Task<IActionResult> Update(MovieUpdateDto movieDto)
+        //{
+        //    await _service.UpdateAsync(_mapper.Map<Movies>(movieDto));
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
-        }
+        //    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        //}
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
