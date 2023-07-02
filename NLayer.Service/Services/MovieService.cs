@@ -16,7 +16,7 @@ namespace NLayer.Service.Services
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IMapper _mapper;
-        public MovieService(IUnitOfWork unitOfWork, IGenericRepository<Movies> repository, IMapper mapper, IMovieRepository movieRepository) : base(unitOfWork, repository)
+        public MovieService(IGenericRepository<Movies> repository, IUnitOfWork unitOfWork, IMapper mapper, IMovieRepository movieRepository) : base(unitOfWork, repository)
         {
             _mapper = mapper;
             _movieRepository = movieRepository;

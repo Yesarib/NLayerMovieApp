@@ -10,7 +10,7 @@ namespace NLayer.Core.Models
     {
         public string? Title { get; set; }
         public int CategoryId { get; set; }
-        public ICollection<Category>? Category { get; set; }
+        public Category Category { get; set; }
         public MovieFeature? MovieFeature { get; set; }
 
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace NLayer.Service.Mapping
 {
     public class MapProfile:Profile
@@ -17,7 +18,8 @@ namespace NLayer.Service.Mapping
             CreateMap<Category,CategoryDto>().ReverseMap();
             CreateMap<MovieFeature, MovieFeatureDto>().ReverseMap();
             CreateMap<MovieUpdateDto, Movies>();
-            CreateMap<Movies,MovieWithCategoryDto>();
+            CreateMap<Movies, MovieWithCategoryDto>();
+
 
         }
     }

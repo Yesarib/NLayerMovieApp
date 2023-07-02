@@ -8,7 +8,7 @@ namespace NLayer.Core.DTOs
 {
     public class MovieWithCategoryDto:MovieDto
     {
-        public CategoryDto? Category { get; set; }
+        public CategoryDto Category { get; set; }
 
     }
 }
