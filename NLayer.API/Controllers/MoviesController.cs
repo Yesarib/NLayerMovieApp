@@ -11,20 +11,18 @@ namespace NLayer.API.Controllers
     public class MoviesController : CustomBaseController
     {
         private readonly IMapper _mapper;
-        private readonly IMovieService _movieService;
-        private readonly IService<Movies> _service;
+        private readonly IMovieService _service;
 
         public MoviesController(IService<Movies> service, IMapper mapper, IMovieService movieService)
         {
-            _service = service;
             _mapper = mapper;
-            _movieService = movieService;
+            _service = movieService;
         }
 
         [HttpGet("GetMoviesWithCategory")]
         public async Task<IActionResult> GetMoviesWithCategory()
         {
-            return CreateActionResult(await _movieService.GetMovieWithCategory());
+            return CreateActionResult(await _service.GetMovieWithCategory());
         }
 
 

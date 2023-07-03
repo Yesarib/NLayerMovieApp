@@ -26,6 +26,9 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IMovieService, MovieService>();
 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 
 
 builder.Services.AddDbContext<AppDbContext>(x =>

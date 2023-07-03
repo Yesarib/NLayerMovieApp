@@ -19,7 +19,7 @@ namespace NLayer.Service.Mapping
             CreateMap<MovieFeature, MovieFeatureDto>().ReverseMap();
             CreateMap<MovieUpdateDto, Movies>();
             CreateMap<Movies, MovieWithCategoryDto>();
-
+            CreateMap<Category, CategoryWithMovieDto>();
 
         }
     }
